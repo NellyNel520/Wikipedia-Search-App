@@ -2,19 +2,36 @@ const form = document.querySelector('.js-search-form');
 form.addEventListener('submit', handleSubmit);
 
 async function handleSubmit(event) {
-    // prevent page from reloading when form is submitted
     event.preventDefault();
-    // get the value of the input field
-  const inputValue = document.querySelector('.js-search-input').value;
-  // remove whitespace from the input
-  const searchQuery = inputValue.trim();
-  try {
-    const results = await searchWikipedia(searchQuery);
-    displayResults(results);
-  } catch (err) {
-    console.log(err);
-    alert('Failed to search wikipedia');
-  }
+    const inputValue = document.querySelector('.js-search-input').value;
+    const searchQuery = inputValue.trim();
+  
+  
+    const searchResults = document.querySelector('.js-search-results');
+  
+    // Clear the previous results
+  
+    searchResults.innerHTML = '';
+  
+  
+  
+    const spinner = document.querySelector('.js-spinner');
+  
+    spinner.classList.remove('hidden');
+  
+  
+    try {
+      const results = await searchWikipedia(searchQuery);
+      displayResults(results);
+    } catch (err) {
+      console.log(err);
+      alert('Failed to search wikipedia');
+  
+    } finally {
+  
+      spinner.classList.add('hidden');
+  
+    }
   
   }
 
