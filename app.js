@@ -1,15 +1,21 @@
 const form = document.querySelector('.js-search-form');
 form.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event) {
+async function handleSubmit(event) {
     // prevent page from reloading when form is submitted
     event.preventDefault();
     // get the value of the input field
   const inputValue = document.querySelector('.js-search-input').value;
   // remove whitespace from the input
   const searchQuery = inputValue.trim();
-  // print `searchQuery` to the console
-  console.log(searchQuery);
+  try {
+    const results = await searchWikipedia(searchQuery);
+    console.log(results);
+  } catch (err) {
+    console.log(err);
+    alert('Failed to search wikipedia');
+  }
+  
   }
 
   async function searchWikipedia(searchQuery) {
