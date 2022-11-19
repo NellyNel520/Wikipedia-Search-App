@@ -5,7 +5,7 @@ This applications functions as a Wikipedia Mock app, recreating Wikipedia's sear
 
 Your device's language is used as the default for searches, but you can also change it to any of the 300+ languages supported by Wikipedia.
 
-####Languages used
+#### Languages used
 *JavaScript 
 *CSS
 *HTML
