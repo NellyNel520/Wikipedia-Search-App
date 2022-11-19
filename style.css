@@ -29,24 +29,58 @@ html {
     padding: 30px 20px;
     margin-bottom: 40px;
   }
+
+  .title{
+    font-family: 'Raleway', sans-serif;
+    padding: 2rem 0 10px;
+  }
+
+  .subtitle{
+    font-family: Arial, Helvetica, sans-serif;
+
+  }
   
   .logo {
+    padding-top: 5%;
     margin-bottom: 30px;
     width: 150px;
   }
   
   .search-input {
-    width: 600px;
-    border-radius: 3px;
     padding: 10px;
-    border: 1px solid var(--border-color);
-    font-size: 18px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  form.search-form button {
+float: left;
+  width: 20%;
+  padding: 11px;
+  background: #2c3be1;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  }
+
+  form.search-form button:hover {
+    background: #0b7dda;
   }
   
   .search-input:focus,
   .search-input:active {
-    border-color: #36c;
+    border-color: rgb(69, 125, 238);
     outline: none;
+  }
+
+  footer {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+  }
+  footer a{
+    color: #2c3be1;
   }
   
   .search-results {
